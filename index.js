@@ -1,61 +1,23 @@
-/**
- * just a random comment
- */
+import { userId, add } from "script.js";
 
-console.log('hello world');
+console.log(userId);
 
+console.log(add(3, 5));
 
-var myVariable = 'Hello World!'; //either global or function scope depending on where it is
+let listItems = document.getElementsByClassName("listItem");
+console.log(listItem);
 
-let myVariable2; //has block scope
+let btn = document.querySelector("#btn");
+btn.addEventListener("click", myFunc);
 
-const myVariable3 = 3; //has block block scope
+async function myFunc() {
+  fetch("https://api.chucknorris.io/jokes/random?category-dev")
+    .then((r) => r.json())
+    .then((parsedResponse) => {
+      let myP = document.createElement("p");
 
-/*
-block scope = we can reference an item where it is
-declared and any inner code blocks
-
-function scope = we can reference an item within
-the function and nowhere else
-
-global scope = we can reference an item anywhere
-in code
- */
-
-function myFunc(x,y){
-    console.log(x + y);
+      let joke = document.querySelector("#joke");
+      myP.innerText = parsedResponse.value;
+      joke.appendChild(myP);
+    });
 }
-
-let myCoolFunction = function() {
-    console.log('my cool function!');
-}
-
-
-myFunc(5,5);
-myCoolFunction();
-
-let myBool = true;
-
-let a = 3;
-let b = 3;
-console.log(a += 3);
-
-console.log((2+2) == 4 ? true : false); //this is aying if 2+2 is 4 then it will return true
-
-letMyNullVar = null;
-
-let myObject = {
-
-    property1: 'a string value',
-
-    myCoolMethod: function(){
-        console.log('hello pluto');
-    }
-}
-
-console.log(myObject.property1);
-myObject.myCoolMethod();
-
-let myArray = [1,3,4, 'this is a string', 7];
-
-console.log(myArray.includes(1)); //looking to see i the array includes the number 1 variable in it

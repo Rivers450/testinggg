@@ -7,6 +7,9 @@ html{
     background-color: gray;
 }
 
-a{
+a,li{
     color:white;
+    list-style-type: none;
 }
+
+
